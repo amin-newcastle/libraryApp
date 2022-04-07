@@ -57,17 +57,8 @@
 </header>
 
 <div class="govuk-width-container ">
-  <main class="govuk-main-wrapper " id="main-content" role="main">
-    <h1 class="govuk-heading-xl">Amin's Library!</h1>
-    <ul *ngIf="this.books">
-      <li *ngFor="let book of this.books">
-        <span>ISBN: = {{book.ISBN}} </span>
-        <span>Title: = {{book.Title}} </span>
-        <span>Author: = {{book.Author}} </span>
 
-      </li>
-    </ul>
-  </main>
+<router-outlet></router-outlet>
 </div>
 
 <footer class="govuk-footer " role="contentinfo">

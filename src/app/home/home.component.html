@@ -1,0 +1,26 @@
+<main class="govuk-main-wrapper " id="main-content" role="main">
+  <h1 class="govuk-heading-xl">Amin's Library</h1>
+  <ul *ngIf="this.library">
+    <table class="govuk-table">
+      <caption class="govuk-table__caption govuk-table__caption--m">Please select your book</caption>
+      <thead class="govuk-table__head">
+      <tr class="govuk-table__row">
+        <th scope="col" class="govuk-table__header"></th>
+        <th scope="col" class="govuk-table__header"></th>
+      </tr>
+      </thead>
+      <tbody class="govuk-table__body">
+      <tr class="govuk-table__row">
+        <th scope="row" class="govuk-table__header">
+          <p *ngFor="let book of this.library">
+            <button [routerLink]="['/book']" [queryParams]="{ISBN: book.ISBN}" class="govuk-button" data-module="govuk-button">
+              {{book.title}}
+            </button>
+          </p>
+        </th>
+      </tr>
+      </tbody>
+    </table>
+
+  </ul>
+</main>
