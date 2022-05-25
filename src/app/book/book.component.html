@@ -1,11 +1,15 @@
-<div>
+<div *ngIf="!book">
+  <h1>Cannot find book</h1>
+</div>
+
+<div *ngIf="book">
   <dl class="govuk-summary-list">
     <div class="govuk-summary-list__row">
       <dt class="govuk-summary-list__key">
         Title
       </dt>
       <dd class="govuk-summary-list__value">
-        {{title}}
+        {{book.title}}
       </dd>
       <dd class="govuk-summary-list__actions">
         <a class="govuk-link" href="#">
@@ -18,7 +22,7 @@
         Author
       </dt>
       <dd class="govuk-summary-list__value">
-        {{author}}
+        {{book.author}}
       </dd>
       <dd class="govuk-summary-list__actions">
         <a class="govuk-link" href="#">
@@ -31,7 +35,7 @@
         ISBN
       </dt>
       <dd class="govuk-summary-list__value">
-        {{isbn}}
+        {{book.ISBN}}
       </dd>
       <dd class="govuk-summary-list__actions">
         <a class="govuk-link" href="#">
@@ -44,7 +48,7 @@
         Synopsis
       </dt>
       <dd class="govuk-summary-list__value">
-        {{synopsis}}
+        {{book.synopsis}}
       </dd>
       <dd class="govuk-summary-list__actions">
         <a class="govuk-link" href="#">

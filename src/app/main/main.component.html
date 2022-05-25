@@ -3,12 +3,11 @@
 </button>
 <div>
   <ul class="govuk-list">
-    <li>
-      <a routerLink="/book" class="govuk-link">Rich Dad, Poor Dad</a>
-    </li><br>
-    <li>
-      <a routerLink="/book" class="govuk-link">Leaders Eat Last</a>
+
+    <li *ngFor="let book of books">
+      <a [routerLink]="['/book', book.ISBN]" class="govuk-link">{{book.title}}</a>
     </li>
+
   </ul>
 </div>
 <a href="javascript:history.back()" class="govuk-back-link">Back</a>
