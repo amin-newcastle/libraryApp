@@ -7,7 +7,7 @@ import { BookComponent } from "./book/book.component";
 const routes: Routes = [
   {path: '', component: LoginComponent},
   {path: 'main', component: MainComponent},
-  {path: 'book', component: BookComponent}
+  {path: 'book/:ISBN', component: BookComponent}
 ];
 
 @NgModule({

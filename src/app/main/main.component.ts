@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import {Router} from "@angular/router";
+import {ActivatedRoute, Router} from "@angular/router";
+import {Book} from "../models/book.interface";
+import {BookService} from "../services/book/book.service";
 
 @Component({
   selector: 'app-main',
@@ -8,17 +10,28 @@ import {Router} from "@angular/router";
 })
 export class MainComponent implements OnInit {
 
-  constructor(private router: Router) { }
+  public books: Book[] = [];
+
+  constructor(private route: ActivatedRoute, private bookService: BookService) { }
 
   createBook() {
-    this.router.navigateByUrl('book-new');
   }
 
-  ngOnInit(): void {
+  async ngOnInit() {
+    await this.getBooks();
   }
 
   selectedBook() {
-    this.router.navigateByUrl('book');
+  }
+
+  async getBooks() {
+    console.log('I am in getBooks');
+    const response: Object | undefined = await this.bookService.getBooks();
+    console.log(response);
+    if (response) {
+      this.books = response as Book[];
+      console.log(this.books);
+    }
   }
 
 }
