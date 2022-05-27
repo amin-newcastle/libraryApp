@@ -12,16 +12,14 @@ export class MainComponent implements OnInit {
 
   public books: Book[] = [];
 
-  constructor(private route: ActivatedRoute, private bookService: BookService) { }
+  constructor(private router: Router, private route: ActivatedRoute, private bookService: BookService) { }
 
-  createBook() {
+  gotoBookForm() {
+    this.router.navigateByUrl('add-book');
   }
 
   async ngOnInit() {
     await this.getBooks();
-  }
-
-  selectedBook() {
   }
 
   async getBooks() {

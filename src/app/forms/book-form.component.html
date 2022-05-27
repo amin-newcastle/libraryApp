@@ -1,0 +1,87 @@
+<form>
+  <fieldset class="govuk-fieldset">
+    <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+      <h1 class="govuk-fieldset__heading">
+        Please enter the details of your book?
+      </h1>
+    </legend>
+
+    <div class="govuk-form-group">
+      <label class="govuk-label" for="formISBN">
+        ISBN
+      </label>
+      <input required
+             pattern="^[0-9]*$"
+             ngModel
+             #formISBN="ngModel"
+             class="govuk-input govuk-!-width-two-thirds form-control"
+             id="formISBN"
+             name="formISBN"
+             type="text">
+      <p id="formISBN-error" class="govuk-error-message" *ngIf="formISBN.touched && !formISBN.valid">
+        <span class="govuk-visually-hidden">Error:</span>
+        ISBN is not valid
+      </p>
+    </div>
+
+    <div class="govuk-form-group">
+      <label class="govuk-label" for="formTitle">
+        Title
+      </label>
+      <input required
+             ngModel
+             #formTitle="ngModel"
+             class="govuk-input govuk-!-width-two-thirds form-control"
+             id="formTitle"
+             name="formTitle"
+             type="text">
+      <p id="formTitle-error" class="govuk-error-message" *ngIf="formTitle.touched && !formTitle.valid">
+        <span class="govuk-visually-hidden">Error:</span>
+        Title is not valid
+      </p>
+    </div>
+
+    <div class="govuk-form-group">
+      <label class="govuk-label" for="formAuthor">
+        Author
+      </label>
+      <input required
+             ngModel #formAuthor="ngModel"
+             class="govuk-input govuk-!-width-two-thirds form-control"
+             id="formAuthor"
+             name="formAuthor"
+             type="text">
+      <p id="formAuthor-error" class="govuk-error-message" *ngIf="formAuthor.touched && !formAuthor.valid">
+        <span class="govuk-visually-hidden">Error:</span>
+        Author is not valid
+      </p>
+    </div>
+
+    <div class="govuk-form-group">
+      <label class="govuk-label" for="formSynopsis">
+        Synopsis
+      </label>
+      <textarea required
+                ngModel
+                #formSynopsis="ngModel"
+                class="govuk-textarea form-control"
+                id="formSynopsis"
+                name="formSynopsis"
+                rows="5"
+                aria-describedby="more-detail-hint">
+      </textarea>
+      <p id="formSynopsis-error" class="govuk-error-message" *ngIf="formSynopsis.touched && !formSynopsis.valid">
+        <span class="govuk-visually-hidden">Error:</span>
+        Synopsis is not valid
+      </p>
+    </div>
+  </fieldset>
+</form>
+
+
+<button (click)="createBook()" class="govuk-button" data-module="govuk-button">
+  Submit
+</button>
+<br>
+<a href="javascript:history.back()" class="govuk-back-link">Back</a>
+
