@@ -22,4 +22,9 @@ export class BookService {
     return this.webReqService.get(getBookUrl).toPromise();
   }
 
+  addBook(book: Book) {
+    const addBookUrl = this.url;
+    return this.webReqService.post(addBookUrl, book).toPromise();
+  }
+
 }
