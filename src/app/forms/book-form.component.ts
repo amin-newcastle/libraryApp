@@ -3,6 +3,7 @@ import {BookService} from "../services/book/book.service";
 import {Book} from "../models/book.interface";
 import {Router} from "@angular/router";
 
+
 @Component({
   selector: 'app-forms',
   templateUrl: './book-form.component.html',
@@ -36,6 +37,7 @@ export class BookFormComponent implements OnInit {
       const isbn = response.isbn;
       await this.router.navigate(['/book', isbn]);
     }
+
   }
 
 }

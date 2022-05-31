@@ -1,4 +1,5 @@
 <form (ngSubmit)="submit()" #bookForm="ngForm">
+
   <fieldset class="govuk-fieldset">
     <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
       <h1 class="govuk-fieldset__heading">
@@ -10,15 +11,19 @@
       <label class="govuk-label" for="formISBN">
         ISBN
       </label>
+
       <input [(ngModel)]="book.ISBN"
              required
+
              pattern="^[0-9]*$"
              ngModel
              #formISBN="ngModel"
              class="govuk-input govuk-!-width-two-thirds form-control"
              id="formISBN"
              name="formISBN"
+
              type="number">
+
       <p id="formISBN-error" class="govuk-error-message" *ngIf="formISBN.touched && !formISBN.valid">
         <span class="govuk-visually-hidden">Error:</span>
         ISBN is not valid
@@ -31,6 +36,7 @@
       </label>
       <input [(ngModel)]="book.title"
              required
+
              ngModel
              #formTitle="ngModel"
              class="govuk-input govuk-!-width-two-thirds form-control"
@@ -49,6 +55,7 @@
       </label>
       <input [(ngModel)]="book.author"
              required
+
              ngModel #formAuthor="ngModel"
              class="govuk-input govuk-!-width-two-thirds form-control"
              id="formAuthor"
@@ -66,6 +73,7 @@
       </label>
       <textarea [(ngModel)]="book.synopsis"
                 required
+
                 ngModel
                 #formSynopsis="ngModel"
                 class="govuk-textarea form-control"
@@ -85,8 +93,6 @@
     Submit
   </button>
 </form>
-
-
 
 <br>
 <a href="javascript:history.back()" class="govuk-back-link">Back</a>

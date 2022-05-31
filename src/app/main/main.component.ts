@@ -16,6 +16,7 @@ export class MainComponent implements OnInit {
 
   gotoBookForm() {
     this.router.navigateByUrl('add-book');
+
   }
 
   async ngOnInit() {
